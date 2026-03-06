@@ -543,7 +543,7 @@
         <h3>IVEY Preschool — Desa Parkcity</h3>
         <div class="loc-row"><span class="loc-ico">📍</span><div class="loc-info"><strong>G-G-08, Plaza Arkadia</strong><span>3, Jalan Intisari, Desa Parkcity, 52200 Kuala Lumpur</span></div></div>
         <div class="loc-row"><span class="loc-ico">📞</span><div class="loc-info"><strong>03-2780 6872 / 011-1633 6617</strong><span>Mon–Fri, 8:30am – 6:00pm</span></div></div>
-        <div class="loc-row"><span class="loc-ico">✉️</span><div class="loc-info"><strong><a href="/cdn-cgi/l/email-protection#0f6a617e7a667d764f66796a766a6b7a216c6062" style="color:var(--o);"><span class="__cf_email__" data-cfemail="23464d52564a515a634a55465a4647560d404c4e">[email&#160;protected]</span></a></strong></div></div>
+        <div class="loc-row"><span class="loc-ico">✉️</span><div class="loc-info"><strong><a href="mailto:enquiry@iveyedu.com" style="color:var(--o);">enquiry@iveyedu.com</a></strong></div></div>
         <div class="loc-hours"><span class="hour-pill">🌅 Half Day: 8:30–12:30</span><span class="hour-pill">☀️ Extended: 8:30–3:00</span><span class="hour-pill">🌙 Full Day: 8:30–6:00</span></div>
         <div class="loc-cta">
           <a href="https://maps.google.com/?q=Plaza+Arkadia+Desa+Parkcity+Kuala+Lumpur" target="_blank" rel="noopener" class="btn btn-p" onclick="trackCTA('map_desa')">📍 Get Directions</a>
@@ -557,7 +557,7 @@
         <h3>IVEY Preschool — Bangsar South <span class="new-tag">NEW</span></h3>
         <div class="loc-row"><span class="loc-ico">📍</span><div class="loc-info"><strong>Bangsar South, Kuala Lumpur</strong><span>Jalan Pantai Prima, 59200 Kuala Lumpur</span></div></div>
         <div class="loc-row"><span class="loc-ico">📞</span><div class="loc-info"><strong>011-2631 6617</strong><span>Mon–Fri, 8:30am – 6:00pm</span></div></div>
-        <div class="loc-row"><span class="loc-ico">✉️</span><div class="loc-info"><strong><a href="/cdn-cgi/l/email-protection#70151e010519020930190615091514055e131f1d" style="color:var(--o);"><span class="__cf_email__" data-cfemail="4a2f243b3f2338330a233c2f332f2e3f64292527">[email&#160;protected]</span></a></strong></div></div>
+        <div class="loc-row"><span class="loc-ico">✉️</span><div class="loc-info"><strong><a href="mailto:enquiry@iveyedu.com" style="color:var(--o);">enquiry@iveyedu.com</a></strong></div></div>
         <div class="loc-hours"><span class="hour-pill">🌅 Half Day: 8:30–12:30</span><span class="hour-pill">☀️ Extended: 8:30–3:00</span><span class="hour-pill">🌙 Full Day: 8:30–6:00</span></div>
         <div class="loc-cta">
           <a href="https://maps.google.com/?q=Jalan+Pantai+Prima+Bangsar+South+59200+Kuala+Lumpur" target="_blank" rel="noopener" class="btn btn-g" onclick="trackCTA('map_bangsar')">📍 Get Directions</a>
@@ -657,7 +657,7 @@
       </address>
       <a href="tel:+60327806872" itemprop="telephone">03-2780 6872</a>
       <a href="tel:+60116336617">011-1633 6617</a>
-      <a href="/cdn-cgi/l/email-protection#781d16090d110a0138110e1d011d1c0d561b1715" itemprop="email"><span class="__cf_email__" data-cfemail="c7a2a9b6b2aeb5be87aeb1a2bea2a3b2e9a4a8aa">[email&#160;protected]</span></a>
+      <a href="mailto:enquiry@iveyedu.com" itemprop="email">enquiry@iveyedu.com</a>
     </div>
     <div class="fcol" itemscope itemtype="https://schema.org/LocalBusiness">
       <h5>Bangsar South <span class="new-tag">NEW</span></h5>
@@ -667,7 +667,7 @@
         <span itemprop="postalCode">59200</span> <span itemprop="addressLocality">Kuala Lumpur</span>
       </address>
       <a href="tel:+601126316617" itemprop="telephone">011-2631 6617</a>
-      <a href="/cdn-cgi/l/email-protection#197c77686c706b6059706f7c607c7d6c377a7674" itemprop="email"><span class="__cf_email__" data-cfemail="45202b34302c373c052c33203c2021306b262a28">[email&#160;protected]</span></a>
+      <a href="mailto:enquiry@iveyedu.com" itemprop="email">enquiry@iveyedu.com</a>
     </div>
   </div>
   <hr class="fdiv"/>
@@ -677,7 +677,16 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const els=document.querySelectorAll('.rv,.rvl,.rvr');
   const io=new IntersectionObserver(entries=>{
-    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add(
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),(i%5)*65);io.unobserve(e.target);}});
+  },{threshold:.09});
+  els.forEach(el=>io.observe(el));
+  window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
+  });
+  function handleSubmit(btn){trackForm();btn.textContent='✓ Enquiry sent! We\'ll be in touch within 24 hours.';btn.style.background='#2E7D52';btn.disabled=true;}
+</script>
+</body>
+</html>
